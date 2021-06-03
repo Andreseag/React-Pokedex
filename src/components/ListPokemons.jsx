@@ -10,7 +10,7 @@ const ListPokemons = ({ listPokemons }) => {
         return (
           <div
             key={id}
-            className={`bg-${types[0]} rounded-xl mb-14 p-4 py-8 flex justify-between items-center shadow-xl relative transform hover:scale-105 transition-all cursor-pointer`}
+            className={`bg-${types[0]} rounded-xl mb-14 p-4 py-8 flex justify-between items-center shadow-xl transform hover:scale-105 transition-all cursor-pointer`}
           >
             <div className='pokemon-info'>
               <span className='text-gray text-sm font-bold'>{`#${
@@ -31,18 +31,30 @@ const ListPokemons = ({ listPokemons }) => {
                   </span>
                 ))}
               </div>
+              <img
+                src='/pattern.svg'
+                alt='pattern'
+                className='absolute top-2 left-20'
+                width='108'
+              />
             </div>
-            <img
-              src={`https://pokeres.bastionbot.org/images/pokemon/${i + 1}.png`}
-              alt={`pokemon-${name}`}
-              className='w-36 z-10 absolute right-5 bottom-7'
-            />
-            <img
-              src='/pokeball.svg'
-              alt='pokeball'
-              className='absolute right-0'
-              width='168'
-            />
+            <div className='pokemon-image'>
+              <figure className='m-0'>
+                <img
+                  src={`https://pokeres.bastionbot.org/images/pokemon/${
+                    i + 1
+                  }.png`}
+                  alt={`pokemon-${name}`}
+                  className='w-36 z-10 absolute right-5 bottom-7'
+                />
+              </figure>
+              <img
+                src='/pokeball.svg'
+                alt='pokeball'
+                className='absolute top-0 right-0'
+                width='168'
+              />
+            </div>
           </div>
         );
       })}
